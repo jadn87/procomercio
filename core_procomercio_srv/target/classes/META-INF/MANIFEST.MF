@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: core-procomercio
+Implementation-Version: 0.1.0
+Built-By: 1018408725
+Implementation-Vendor-Id: co.com.procomercio
+Build-Jdk: 1.8.0_101
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/core_procomercio_srv
+Created-By: Maven Integration for Eclipse
+

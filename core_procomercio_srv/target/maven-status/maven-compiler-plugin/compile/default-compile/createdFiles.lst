@@ -1,0 +1,14 @@
+co\com\procomercio\dao\ProductDaoImpl.class
+co\com\procomercio\service\ProductService.class
+co\com\procomercio\model\User.class
+co\com\procomercio\AppProcomercioSrv.class
+co\com\procomercio\service\ProductServiceImpl.class
+co\com\procomercio\service\UserService.class
+co\com\procomercio\model\Product.class
+co\com\procomercio\controller\ProductsCtrl.class
+co\com\procomercio\controller\UserCtrl.class
+co\com\procomercio\model\Category.class
+co\com\procomercio\dao\UserDao.class
+co\com\procomercio\service\UserServiceImpl.class
+co\com\procomercio\dao\ProductDao.class
+co\com\procomercio\dao\UserDaoImpl.class
