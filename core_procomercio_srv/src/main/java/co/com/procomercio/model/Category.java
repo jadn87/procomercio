@@ -12,7 +12,7 @@ import javax.persistence.Table;
  * @author 1018408725
  */
 @Entity
-@Table(name = "categories")
+@Table(name = "CATEGORIES")
 public class Category implements Serializable { 
 	
 	private static final long serialVersionUID = 1L;

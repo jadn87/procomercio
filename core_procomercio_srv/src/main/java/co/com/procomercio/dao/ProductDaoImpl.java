@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import co.com.procomercio.model.Category;
+import co.com.procomercio.model.Product;
 
 @Transactional
 @Repository
@@ -29,6 +30,17 @@ public class ProductDaoImpl implements ProductDao{
 				.setParameter(2, false).getResultList();
 		
         return results;		
+	}
+
+
+	@Override
+	public List<Product> getProductsXCategory(String category) {
+		// TODO Auto-generated method stub
+		String hql = "from ProductCategories where upper(root) = ?1 and eliminated = ?2";
+		List<Product> results = entityManager.createQuery(hql)
+				.setParameter(1, category.toUpperCase())
+				.setParameter(2, false).getResultList();
+		return null;
 	}
 
 }
