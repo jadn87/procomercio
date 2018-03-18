@@ -7,7 +7,7 @@
 	</configSuffixes>
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
-		<config>java:co.com.procomercio.AppProcomercioSrv</config>
+		<config>java:com.co.procomercio.AppProcomercioSrv</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
