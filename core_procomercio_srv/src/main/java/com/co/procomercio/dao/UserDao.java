@@ -7,4 +7,6 @@ public interface UserDao {
 	User getUserById(String id);
 
 	void addUser(User user);
+
+	boolean userExists(String id);
 }

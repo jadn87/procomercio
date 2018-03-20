@@ -24,6 +24,15 @@ public class UserDaoImpl implements UserDao{
 	}
 	
 	@Override
+	public boolean userExists(String id) {
+		String hql = "from User where id = ?1 and blocked = ?2";
+		int count = entityManager.createQuery(hql)
+				.setParameter(1, id)
+				.setParameter(2, false).getResultList().size();
+		return count > 0 ? true : false;
+	}
+	
+	@Override
 	public void addUser(User user) {
 		//encriptar password de usuario
 		user.setPassword(new DesEncrypter().encrypt(user.getPassword()));

@@ -18,20 +18,16 @@ public class UserServiceImpl implements UserService{
 		return userDao.getUserById(id);
 	}
 
-	@Override
-	public synchronized boolean addUser(User user) {
-		// TODO Auto-generated method stub
-		return false;
-	}
 	
-//	public synchronized boolean addArticle(Article article){
-//	       if (articleDAO.articleExists(article.getTitle(), article.getCategory())) {
-//	    	   return false;
-//	       } else {
-//	    	   articleDAO.addArticle(article);
-//	    	   return true;
-//	       }
-//		}
+	@Override
+	public synchronized boolean addUser(User user){
+       if (userDao.userExists(user.getId())) {
+    	   return false;
+       } else {
+    	   userDao.addUser(user);
+    	   return true;
+       }
+	}
 
 	
 }
