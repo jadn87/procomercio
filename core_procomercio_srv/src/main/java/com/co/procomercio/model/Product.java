@@ -49,7 +49,11 @@ public class Product implements Serializable {
     @Column(name = "amountpromo")
     private Double amountpromo;
     
-    private static final long serialVersionUID = 1L;
+    private int quantity;
+    
+    private String observacion;
+    
+	private static final long serialVersionUID = 1L;
     
 
     public String getName() {
@@ -139,5 +143,21 @@ public class Product implements Serializable {
     public void setAmountpromo(Double amountpromo) {
         this.amountpromo = amountpromo;
     }
+    
+    public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
+	public String getObservacion() {
+		return observacion;
+	}
+
+	public void setObservacion(String observacion) {
+		this.observacion = observacion;
+	}
 
 }

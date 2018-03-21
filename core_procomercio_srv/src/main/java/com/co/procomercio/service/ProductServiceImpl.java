@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import com.co.procomercio.dao.ProductDao;
 import com.co.procomercio.model.Category;
 import com.co.procomercio.model.Product;
+import com.co.procomercio.model.ProductPK;
 
 @Service
 public class ProductServiceImpl implements ProductService{
@@ -40,6 +41,12 @@ public class ProductServiceImpl implements ProductService{
 	@Override
 	public void updateProduct(Product product) {
 		productDao.updateProduct(product);
+	}
+
+	@Override
+	public Product getProductById(ProductPK prd) {
+		// TODO Auto-generated method stub
+		return productDao.getProductById(prd);
 	}
 	
 }

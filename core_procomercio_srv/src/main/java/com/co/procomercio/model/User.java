@@ -23,8 +23,8 @@ public class User implements Serializable {
 	private String subclass;
 	@Column(name="name")
 	private String name;
-	@Column(name="lastname")
-	private String lastname;
+	@Column(name="email")
+	private String email;
 	@Column(name="updated")
 	private Date updated;
 	@Column(name="blocked")
@@ -54,15 +54,15 @@ public class User implements Serializable {
 	}
 	public void setName(String name) {
 		this.name = name;
-	}
-	public String getLastname() {
-		return lastname;
-	}
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
-	}
+	}	
 	public Date getUpdated() {
 		return updated;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public void setUpdated(Date updated) {
 		this.updated = updated;

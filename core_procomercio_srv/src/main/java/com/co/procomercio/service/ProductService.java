@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.co.procomercio.model.Category;
 import com.co.procomercio.model.Product;
+import com.co.procomercio.model.ProductPK;
 
 public interface ProductService {
 
@@ -11,4 +12,6 @@ public interface ProductService {
 	List<Product> getProductsXCategory(String category);
 	boolean addProduct(Product product);
 	void updateProduct(Product product);
+	Product getProductById(ProductPK prd);
+	
 }

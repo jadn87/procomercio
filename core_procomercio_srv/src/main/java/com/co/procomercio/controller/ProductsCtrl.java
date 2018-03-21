@@ -11,6 +11,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import com.co.procomercio.model.Category;
 import com.co.procomercio.model.Product;
+import com.co.procomercio.model.ProductPK;
 import com.co.procomercio.service.ProductService;
 
 //@RestController 
@@ -33,7 +34,7 @@ public class ProductsCtrl {
 		return new ResponseEntity<List<Product>>(list, HttpStatus.OK);
 	}
 	
-	@PostMapping("addProduct")
+	@PostMapping("add")
 	public ResponseEntity<Void> addProduct(@RequestBody Product product, UriComponentsBuilder builder) {
         boolean flag = productService.addProduct(product);
         if (flag == false) {
@@ -45,9 +46,16 @@ public class ProductsCtrl {
         return new ResponseEntity<Void>(HttpStatus.CREATED);
 	}
 	
-	@PutMapping("updProduct") 
+	@PutMapping("upd") 
 	public ResponseEntity<Product> updateProduct(@RequestBody Product product) {
 		productService.updateProduct(product);
+		return new ResponseEntity<Product>(product, HttpStatus.OK);
+	}
+	
+	
+	@GetMapping("get")
+	public ResponseEntity<Product> getProductsByCategory(@PathVariable("ean") ProductPK prd) {
+		Product product = productService.getProductById(prd);
 		return new ResponseEntity<Product>(product, HttpStatus.OK);
 	}
 	
