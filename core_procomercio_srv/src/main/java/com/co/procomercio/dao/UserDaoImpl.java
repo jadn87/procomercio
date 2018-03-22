@@ -56,18 +56,19 @@ public class UserDaoImpl implements UserDao{
 		entityManager.persist(useraddress);
 	}
 	
-	@SuppressWarnings("unchecked")
+//	@SuppressWarnings("unchecked")
 	@Override
 	public List<UserAddress> getUserAddress(String username) {
-		String hql = "FROM UserAddress where email = ?1 ORDER BY updated desc";
+		String hql = "select iduser,zone,address,phone,alias,eliminated,updated from UserAddress where iduser = ?1";
 		return (List<UserAddress>) entityManager.createQuery(hql).setParameter(1, username).getResultList();
 	}	
 	
 	public boolean passValidate(String pwdInput, String pwdUser ){
-        DesEncrypter encryp = new DesEncrypter();
-        String result = encryp.decrypt(pwdUser);
-        System.out.println("clave del usuario "+encryp.encrypt(pwdInput));
-        return result.equals(pwdInput);
+        DesEncrypter base64 = new DesEncrypter();
+        //Encriptar la clave que ingreso el usuario por la aplicacion
+        String result = base64.decrypt(pwdInput);
+        System.out.println("clave del usuario "+result);
+        return result.equals(pwdUser);
     }
 	
 	@Override
@@ -79,7 +80,7 @@ public class UserDaoImpl implements UserDao{
 				.setParameter(2, false).getSingleResult();
 		
 		if(login!=null)
-			return passValidate(user.getPassword(), login.getPassword());
+			return passValidate(login.getPassword(), user.getPassword());
 		
 		return false;		
 	}

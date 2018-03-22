@@ -53,8 +53,8 @@ public class ProductsCtrl {
 	}
 	
 	
-	@GetMapping("get")
-	public ResponseEntity<Product> getProductsByCategory(@PathVariable("ean") ProductPK prd) {
+	@PostMapping("get")
+	public ResponseEntity<Product> getProduct(@RequestBody ProductPK prd) {
 		Product product = productService.getProductById(prd);
 		return new ResponseEntity<Product>(product, HttpStatus.OK);
 	}

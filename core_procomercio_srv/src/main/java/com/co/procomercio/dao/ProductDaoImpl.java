@@ -20,7 +20,10 @@ public class ProductDaoImpl implements ProductDao{
 
 	@Override
 	public Product getProductById(ProductPK prd) {
-		return entityManager.find(Product.class, prd);
+		Product objPrd = new Product();
+		objPrd.setEan(prd.getEan());
+		objPrd.setPricelist(prd.getPricelist());
+		return entityManager.find(Product.class, objPrd);
 	}
 	
 	@SuppressWarnings("unchecked")

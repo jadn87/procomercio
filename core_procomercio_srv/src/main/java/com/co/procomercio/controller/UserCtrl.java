@@ -60,7 +60,7 @@ public class UserCtrl {
 		return new ResponseEntity<List<UserAddress>>(address, HttpStatus.OK);
 	}
 	
-	@GetMapping("login")
+	@PostMapping("login")
 	public ResponseEntity<User> userLogin(@RequestBody User user){
 		boolean login = userService.login(user);		
 		if(login) System.out.println("User ID "+user.getName() + " login success");
