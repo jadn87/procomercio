@@ -23,7 +23,7 @@ public class ProductDaoImpl implements ProductDao{
 		Product objPrd = new Product();
 		objPrd.setEan(prd.getEan());
 		objPrd.setPricelist(prd.getPricelist());
-		return entityManager.find(Product.class, objPrd);
+		return entityManager.find(Product.class, prd);
 	}
 	
 	@SuppressWarnings("unchecked")
