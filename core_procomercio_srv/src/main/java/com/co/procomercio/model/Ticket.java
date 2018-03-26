@@ -1,12 +1,15 @@
 package com.co.procomercio.model;
 
 import java.io.Serializable;
+import java.math.BigInteger;
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -17,11 +20,11 @@ public class Ticket implements Serializable {
 	private static final long serialVersionUID = 1L;
 
     @Id    
-    @Column(name = "cityid")
-    private String cityId;
+    @Column(name = "localid")
+    private String localId;
     @Id
     @Column(name = "ticketnumber")
-    private Integer ticketnumber;
+    private BigInteger ticketnumber;
     @Id
     @Column(name = "opendate")
     private Date opendate;
@@ -44,20 +47,24 @@ public class Ticket implements Serializable {
     @Column(name = "paymentmodeid")
     private int paymentmodeId;
 
-    
-    public String getCityId() {
-        return cityId;
-    }
+       
 
-    public void setCityId(String cityId) {
-        this.cityId = cityId;
-    }
-
-    public Integer getTicketnumber() {
+    public BigInteger getTicketnumber() {
         return ticketnumber;
     }
 
-    public void setTicketnumber(Integer ticketnumber) {
+
+	public String getLocalId() {
+		return localId;
+	}
+
+
+	public void setLocalId(String localId) {
+		this.localId = localId;
+	}
+
+
+	public void setTicketnumber(BigInteger ticketnumber) {
         this.ticketnumber = ticketnumber;
     }
 

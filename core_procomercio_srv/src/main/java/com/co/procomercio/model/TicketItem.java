@@ -1,30 +1,33 @@
 package com.co.procomercio.model;
 
 import java.io.Serializable;
+import java.math.BigInteger;
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.IdClass;
 import javax.persistence.Table;
 
 @Entity
-@IdClass(TicketPK.class)
 @Table(name = "TICKETITEMS")
 public class TicketItem implements Serializable {
 
     @Id    
-    @Column(name = "cityid")
-    private String cityId;
+    @Column(name = "localid")
+    private String localId;
     
     @Id
     @Column(name = "ticketnumber")
-    private Integer ticketnumber;
+    private BigInteger ticketnumber;
     
     @Id
     @Column(name = "opendate")
     private Date opendate;
+    
+    @Id
+    @Column(name = "id")
+    private int id;
         
     @Column(name = "ean")
     private String ean;
@@ -46,20 +49,22 @@ public class TicketItem implements Serializable {
 
     
     private static final long serialVersionUID = 1L;
+
     
-    public String getCityId() {
-        return cityId;
-    }
 
-    public void setCityId(String cityId) {
-        this.cityId = cityId;
-    }
+    public String getLocalId() {
+		return localId;
+	}
 
-    public Integer getTicketnumber() {
+	public void setLocalId(String localId) {
+		this.localId = localId;
+	}
+
+	public BigInteger getTicketnumber() {
         return ticketnumber;
     }
 
-    public void setTicketnumber(Integer ticketnumber) {
+    public void setTicketnumber(BigInteger ticketnumber) {
         this.ticketnumber = ticketnumber;
     }
 
@@ -118,6 +123,14 @@ public class TicketItem implements Serializable {
     public void setTax(int tax) {
         this.tax = tax;
     }
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
     
     
 }
